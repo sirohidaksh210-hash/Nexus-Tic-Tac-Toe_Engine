@@ -1,43 +1,43 @@
 # Overview
 
-This project is a Python-based implementation of the Minimax Algorithm optimized with Alpha-Beta Pruning to solve the zero-sum game of Tic-Tac-Toe. The AI agent (Nexus-Bot) evaluates all possible future board states and uses positional heuristics to play optimally, ensuring it never loses.
+The Nexus Tic-Tac-Toe Engine is a robust, terminal-based implementation of the classic zero-sum game, engineered to showcase advanced artificial intelligence concepts. Unlike standard random-move bots, the "Nexus-Bot" utilizes a fully optimized Minimax algorithm paired with Alpha-Beta Pruning and positional heuristics. By analyzing entire decision trees and calculating future board states, the engine guarantees an unbeatable AI opponent that will invariably secure a win or force a draw.
 
 # Features
 
-* **Unbeatable AI:** Uses recursive Minimax algorithm with Alpha-Beta Pruning and center-control heuristics for instant, flawless decision making.
-* **Game Logging:** Automatically saves match results, timestamps, and move history to a session-specific file (`nexus_session_[DATE].log`).
-* **Modular Design:** Enterprise-grade architecture separating logic, UI, logging, and AI components across five distinct Python modules.
+* **Algorithmic Invincibility:** Powered by a recursive Minimax algorithm that is mathematically incapable of losing.
+* **Optimized Decision Making:** Implements Alpha-Beta Pruning to ignore redundant game-tree branches, resulting in instant, zero-latency move calculations.
+* **Enterprise Logging System:** Automatically tracks and writes all session data—including exact timestamps, user coordinates, and final outcomes—to a dedicated `nexus_session_[DATE].log` file.
+* **Modular Architecture:** Adheres to the Single Responsibility Principle by dividing the engine into five distinct modules: Core Engine, Interface Manager, Intelligence Module, System Auditor, and Application Entry.
 
 # Tools Used
 
 * **Programming Language:** Python 3.x
-* **Standard Libraries:** `math` (for infinite bounds in algorithms), `logging` (for session tracking), `datetime` (for timestamping).
+* **Standard Libraries:** * `math` (for establishing infinite bounds in the Alpha-Beta algorithm)
+  * `logging` (for asynchronous session auditing)
+  * `datetime` (for real-time event tracking)
 
 # Steps to Install & Run
 
-1. Ensure Python is installed on your system.
-2. Clone the Repository: Download or clone the folder containing the `Nexus_TicTacToe_Engine` files.
-3. Open your terminal in the project directory.
-4. Run the command: `python application_entry.py`
+1. Verify that Python 3.x is installed on your local environment.
+2. Clone or download the project repository to your machine.
+3. Open your terminal or command line interface and navigate to the project directory.
+4. Execute the following command to initialize the engine: 
+   `python application_entry.py`
 
 # Testings
 
-### Test A: Functional Gameplay
-1. Run the game.
-2. Enter a valid grid coordinate (e.g., `A1`, `B2`, `C3`) to place your 'X'.
-3. Verify that the 'O' (Nexus AI) responds immediately with its move.
+### Test A: Functional Gameplay & Input Mapping
+* **Procedure:** Initialize the game. When prompted, enter a valid alphanumeric coordinate (e.g., `A1`, `B2`, `C3`) to claim a cell.
+* **Success Criteria:** The interface must update to reflect the user's 'X', and the Nexus-Bot ('O') must immediately counter-move without crashing.
 
 ### Test B: AI Intelligence (The "Unbeatable" Test)
-1. Play 3 full games.
-2. Try to trap the AI using "fork" strategies (creating two simultaneous threats).
-3. **Success Criteria:** The AI must either Win or force a Draw. It must NEVER lose.
+* **Procedure:** Play a minimum of three consecutive matches. Attempt advanced Tic-Tac-Toe tactics, such as setting up a "fork" (creating two unblockable win conditions simultaneously).
+* **Success Criteria:** The AI must perfectly predict and block all traps. The session must end in either an AI victory or a Draw. The AI must never register a loss.
 
-### Test C: Robustness (Error Handling)
-1. Enter an invalid format (e.g., "Z9" or "Hello") instead of a grid coordinate.
-2. Try to place a mark on a spot that is already occupied by X or O.
-3. **Success Criteria:** The program should print an error message ("Error: Target cell unavailable.") and ask you to try again. It should NOT crash.
+### Test C: Robustness & Exception Handling
+* **Procedure:** Intentionally input invalid data when prompted. Try entering a string (e.g., "Hello"), an out-of-bounds coordinate (e.g., "Z9"), or a coordinate that is already occupied on the grid.
+* **Success Criteria:** The engine must catch the exception, print a clear error message ("Error: Target cell unavailable."), and safely reprompt the user for input without terminating the application.
 
-### Test D: Logging System
-1. Complete a game (Win or Draw).
-2. Open the newly generated `nexus_session_[YYYY-MM-DD].log` file in the project folder.
-3. **Success Criteria:** The file should contain a step-by-step history of every move made with timestamps, ending with the final session result.
+### Test D: Audit Logging System
+* **Procedure:** Complete a full match (Win or Draw). Navigate to the project folder and open the newly generated `.log` file.
+* **Success Criteria:** The file must contain a sequential, timestamped ledger of every move executed during the session, concluding with an accurate declaration of the final game state.
