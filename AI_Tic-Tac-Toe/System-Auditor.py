@@ -2,7 +2,7 @@ import logging
 import datetime
 
 class NexusLog:
-    """Records session data for performance analysis."""
+    
     def __init__(self):
         log_name = f"nexus_session_{datetime.date.today()}.log"
         logging.basicConfig(filename=log_name, level=logging.INFO)
