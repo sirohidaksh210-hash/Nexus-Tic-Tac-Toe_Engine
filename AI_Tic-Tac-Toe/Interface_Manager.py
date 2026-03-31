@@ -10,13 +10,13 @@ class NexusInterface:
 
     def render_view(self):
         print("\n    [1] [2] [3]")
-        print("  -------------")
+        print("  ---")
         labels = ['A', 'B', 'C']
         for i, label in enumerate(labels):
             start = i * 3
             cells = self.matrix[start:start+3]
             print(f"{label} | " + " | ".join(cells) + " |")
-            print("  -------------")
+            print("  ---")
 
     def apply_move(self, pos, symbol):
         idx = self.coord_map.get(pos.upper())
