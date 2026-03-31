@@ -1,5 +1,5 @@
 class NexusInterface:
-    """Manages the visual representation and coordinate mapping."""
+    
     def __init__(self):
         self.matrix = [" "] * 9
         self.coord_map = {
