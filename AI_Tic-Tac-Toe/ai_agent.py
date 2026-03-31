@@ -2,7 +2,7 @@ import math
 from game_rules import NexusRules
 
 class NexusAI:
-    """Implements Alpha-Beta Pruning for optimal move selection."""
+    
     def __init__(self, ai_symbol):
         self.id = ai_symbol
         self.human_id = "O" if ai_symbol == "X" else "X"
